@@ -1,6 +1,7 @@
 "use client";
 
 import { registerUser } from "@/actions/user";
+import ImageUpload from "@/components/comp-545";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -329,13 +330,8 @@ export function RegistrationForm() {
           <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
             Profile Photo (Optional)
           </label>
-          <Input
-            type="file"
-            accept="image/*"
-            onChange={(e) => {
-              const file = e.target.files?.[0];
-              if (file) setSelectedImage(file);
-            }}
+          <ImageUpload
+            onFileChange={(file) => setSelectedImage(file)}
           />
           {selectedImage && (
             <p className="text-sm text-slate-500">Selected: {selectedImage.name}</p>
@@ -346,6 +342,6 @@ export function RegistrationForm() {
           {isLoading ? "Registering..." : "Register"}
         </Button>
       </form>
-    </Form>
+    </Form >
   );
 }
