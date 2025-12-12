@@ -10,9 +10,6 @@ export async function registerUser(formData: FormData) {
         const res = await fetch(`${envList.NEXT_PUBLIC_API_URL}/users/register`, {
             method: "POST",
             body: formData,
-            cache: "no-store",
-            // @ts-ignore - Required for file uploads in some Node environments
-            duplex: "half",
         });
 
         return await res.json();
