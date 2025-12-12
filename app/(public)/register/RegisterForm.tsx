@@ -128,6 +128,7 @@ export function RegistrationForm() {
       <form
         onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-4 max-w-2xl mx-auto"
+        encType="multipart/form-data"
       >
         {/* Name & Email */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
