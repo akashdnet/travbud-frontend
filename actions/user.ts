@@ -5,7 +5,7 @@ import { cookies } from "next/headers";
 
 // ============ User Actions ============
 
-export async function registerUser(formData: FormData) {
+export async function registerUser(_prevState: any, formData: FormData) {
     try {
         const payload = new FormData();
 
